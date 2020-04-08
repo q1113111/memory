@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .flower {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+        }
+
+        .flower div img {
+            position: relative;
+            z-index: 3;
+            width: 30%;
+        }
+
+        .flower div {
+            position: absolute;
+            display: block;
+        }
+
+        .flower div:nth-child(1) {
+            left: 75%;
+            animation: flower 15s linear infinite;
+            
+        }
+
+        .flower div:nth-child(2) {
+            left: 45%;
+            animation: flower 20s linear infinite;
+            animation-delay: -5s;
+        }
+
+        .flower div:nth-child(3) {
+            left: 80%;
+            animation: flower 25s linear infinite;
+            
+        }
+
+        .flower div:nth-child(4) {
+            left: 40%;
+            animation: flower 15s linear infinite;
+            animation-delay: -2s;
+
+        }
+
+        .flower div:nth-child(5) {
+            left: 53%;
+            animation: flower 18s linear infinite;
+            animation-delay: -4s;
+        }
+
+        .flower div:nth-child(6) {
+            left: 10%;
+            animation: flower 12s linear infinite;
+            animation-delay: -6s;
+        }
+
+        .flower div:nth-child(7) {
+            left: 20%;
+            animation: flower 14s linear infinite;
+        }
+
+        .flower div:nth-child(8) {
+            left: 28%;
+            animation: flower 15s linear infinite;
+            animation-delay: -3s;
+        }
+
+        .flower div:nth-child(9) {
+            left: 35%;
+            animation: flower 20s linear infinite;
+        }
+
+        .flower div:nth-child(10) {
+            left: 10%;
+            animation: flower 17s linear infinite;
+            animation-delay: -3s;
+        }
+
+        .flower div:nth-child(11) {
+            left: 86%;
+            animation: flower 20s linear infinite;
+        }
+
+        .flower div:nth-child(12) {
+            left: 65%;
+            animation: flower 18s linear infinite;
+        }
+
+        .flower div:nth-child(13) {
+            left: 76%;
+            animation: flower 25s linear infinite;
+        
+        }
+
+        .flower div:nth-child(14) {
+            left: 19%;
+            animation: flower 17s linear infinite;
+
+        }
+
+        .flower div:nth-child(15) {
+            left: 24%;
+            animation: flower 10s linear infinite;
+        }
+
+        .flower div:nth-child(16) {
+            left: 37%;
+            animation: flower 19s linear infinite;
+
+        }
+
+        .flower div:nth-child(17) {
+            left: 68%;
+            animation: flower 20s linear infinite;
+            animation-delay: -4s;
+        }
+
+        .flower div:nth-child(18) {
+            left: 7%;
+            animation: flower 13s linear infinite;
+        }
+
+        @keyframes flower {
+            0% {
+                opacity: 0;
+                top: -10%;
+                transform: translateX(20px) rotate(0deg);
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            25% {
+                transform: translateX(-20px) rotate(45deg);
+            }
+
+            45% {
+                transform: translateX(-20px) rotate(90deg);
+            }
+
+            65% {
+                transform: translateX(20px) rotate(135deg);
+            }
+
+            75% {
+                transform: translateX(-20px) rotate(180deg);
+            }
+
+            100% {
+                top: 110%;
+                transform: translateX(-20px) rotate(225deg);
+            }
+        }
+
+        .flower2 {
+            transform: scale(1.5) rotateY(180deg);
+            filter: blur(2px);
+        }
+
+        .flower3 {
+            transform: scale(.9) rotateX(180deg);
+            filter: blur(4px);
+        }
+        .txt{
+            margin: auto;
+            position: absolute;
+            width: 100%; 
+            text-align: center;
+            top: 10%;
+        }
+        .txt h1{
+            color: #fff;
+        }
+        .txt p{ 
+            padding: 10px;
+            color: #fff;
+            display: none;
+        }
+        .swiper-container {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+        }
+        .swiper-slide img{
+            width: 100%;
+        }
+        @media screen and (max-width: 576px) {
+           .flower div img {
+                width: 10%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+      
+        <div class="flower">
+            <div><img src="image/flower01.png" alt=""></div>
+            <div><img src="image/flower02.png" alt=""></div>
+            <div><img src="image/flower07.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower09.png" alt=""></div>
+            <div><img src="image/flower06.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower08.png" alt=""></div>
+            <div><img src="image/flower05.png" alt=""></div>
+            <div><img src="image/flower01.png" alt=""></div>
+            <div><img src="image/flower02.png" alt=""></div>
+            <div><img src="image/flower07.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower09.png" alt=""></div>
+            <div><img src="image/flower06.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower08.png" alt=""></div>
+            <div><img src="image/flower05.png" alt=""></div>
+        </div>
+        
+        <div class="flower flower2">
+            <div><img src="image/flower01.png" alt=""></div>
+            <div><img src="image/flower02.png" alt=""></div>
+            <div><img src="image/flower07.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower09.png" alt=""></div>
+            <div><img src="image/flower06.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower08.png" alt=""></div>
+            <div><img src="image/flower05.png" alt=""></div>
+            <div><img src="image/flower01.png" alt=""></div>
+            <div><img src="image/flower02.png" alt=""></div>
+            <div><img src="image/flower07.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower09.png" alt=""></div>
+            <div><img src="image/flower06.png" alt=""></div>
+            <div><img src="image/flower04.png" alt=""></div>
+            <div><img src="image/flower08.png" alt=""></div>
+            <div><img src="image/flower05.png" alt=""></div>
+        </div>
+        <div class="flower flower3">
+                <div><img src="image/flower01.png" alt=""></div>
+                <div><img src="image/flower02.png" alt=""></div>
+                <div><img src="image/flower07.png" alt=""></div>
+                <div><img src="image/flower04.png" alt=""></div>
+                <div><img src="image/flower09.png" alt=""></div>
+                <div><img src="image/flower06.png" alt=""></div>
+                <div><img src="image/flower04.png" alt=""></div>
+                <div><img src="image/flower08.png" alt=""></div>
+                <div><img src="image/flower05.png" alt=""></div>
+                <div><img src="image/flower01.png" alt=""></div>
+                <div><img src="image/flower02.png" alt=""></div>
+                <div><img src="image/flower07.png" alt=""></div>
+                <div><img src="image/flower04.png" alt=""></div>
+                <div><img src="image/flower09.png" alt=""></div>
+                <div><img src="image/flower06.png" alt=""></div>
+                <div><img src="image/flower04.png" alt=""></div>
+                <div><img src="image/flower08.png" alt=""></div>
+                <div><img src="image/flower05.png" alt=""></div>
+            </div>
+    </div>
+    
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        (function($){
+            $(function(){
+                $('.txt h1').click(function(){
+                    $('.txt p').fadeIn(2000);
+                    $('.swiper-container').fadeOut(1000);
+                });
+            });
+        })(jQuery)
+       var swiper = new Swiper('.swiper-container', {
+      effect: 'cube',
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+    });
+    </script>
+</body>
+
+</html>

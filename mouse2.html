@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: sans-serif;
+            background-color: #000;
+            cursor: none;
+        }
+
+        #cursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: exclusion;
+            background: radial-gradient(circle, #000 0%, #000 3.99%, #fff 4%,  #fff 100%);
+          
+        }
+
+        #cursor.hover {
+            width: 100px;
+            height: 100px;
+            transition: .1s;
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="cursor"></div>
+   
+    
+    <!-- <div class="pic"><img src="images/3.jpg" alt=""></div> -->
+    <section> <h1  class="js-hover">Follow The Cursor | Javascript</h1></section>
+    <section></section>
+    <section></section>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        (function ($) {
+            $(function () {
+                $(window).on('mousemove', function (e) {
+                    var x = e.pageX;
+                    var y = e.pageY;
+                    $('#cursor').css({'left': x + 'px','top': y+'px'});
+                    // $('#cursor').css('left', x + 'px');
+                    // $('#cursor').css('top', y + 'px');
+
+                });
+                
+                $('.js-hover').on('mouseenter', function () {
+                        $('#cursor').addClass('hover');
+                    });
+                    $('.js-hover').on('mouseout', function () {
+                        $('#cursor').removeClass('hover');
+                    })
+            });
+        })(jQuery)
+
+
+        // var cursor = document.getElementById('cursor');
+        // document.addEventListener('mousemove',function(e){
+        //     　var x = e.clientX;
+        //       var y = e.clientY;
+        //       cursor.style.left = x + 'px';
+        //       cursor.style.top = y + "px";
+        // });
+    </script>
+</body>
+
+</html>

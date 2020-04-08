@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+    <script>
+    (function($){
+        var zero = 0;
+        $(function(){
+            $(window).on('scroll',function(){       
+                $(".navbar").toggleClass("hide", $(window).scrollTop() > zero);
+                zero =  $(window).scrollTop();
+                console.log("zero=" + zero);
+                console.log("top" + $(window).scrollTop() );
+            })
+            console.log(zero);
+        });
+
+    })(jQuery)
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            padding: 0 0 0 100px;
+            box-sizing: border-box;
+            transition: .5s;
+        }
+        .navbar.hide{
+            transform: translateY(-100%);
+        }
+        .navbar .channel {
+            position: relative;
+        }
+
+        .navbar .channel img {
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            float: right;
+            background-color: rgb(204, 204, 204, .5);
+        }
+
+        .navbar ul li {
+            line-height: 80px;
+            text-align: center;
+        }
+
+        .navbar ul li a {
+            display: block;
+            padding: 0 30px;
+            font-size: 16px;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul li a.active,
+        .navbar ul li a:hover {
+            background-color: #f00;
+            color: #fff;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        section.sec1 {
+            background: url(images/1.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        section.sec2 {
+            padding: 100px;
+            height: auto;
+        }
+
+        section.sec2 h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+        }
+
+        section.sec2 p {
+            font-size: 18px;
+        }
+
+        section.sec3 {
+            background: url(images/2.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+           
+        }
+        section.sec4 {
+           position: fixed;
+           background: #000;
+           z-index: 1;
+           height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#" class="channel"><img src="images/coffee-time-png_91570.jpg" alt=""></a>
+        <ul>
+            <li><a href="#" class="active">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </div>
+    <section class="sec1"></section>
+    <section class="sec2">
+        <h1>djajdsk asjkldjkl</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat eligendi accusamus, excepturi dolorem nulla
+            atque? Fuga praesentium, obcaecati eveniet id consequuntur omnis nulla, qui, voluptate modi deleniti velit
+            placeat cupiditate.
+            Excepturi unde consectetur, accusamus quibusdam dicta doloribus est aliquid, nulla commodi tempora quos
+            officia quasi quisquam optio sint ad aut a ea sit esse praesentium cumque assumenda? Obcaecati, voluptatem
+            cumque.
+            Placeat voluptate deserunt cupiditate amet optio aut delectus tempore rerum aliquid unde omnis, nulla
+            laboriosam reprehenderit, vitae cum quam! Mollitia, corrupti nobis exercitationem illum ab veritatis
+            repellendus voluptas aliquid voluptatum!
+            Repellat sint quod expedita odit beatae consequuntur doloremque minima hic facere dicta, dolore obcaecati
+            perspiciatis dignissimos laudantium debitis. Exercitationem cumque ut, rerum aut dolores qui delectus
+            veritatis quas culpa rem?
+            Tempore perferendis corporis aperiam odit porro quibusdam ipsum quae eveniet! Ullam possimus, mollitia,
+            velit asperiores, cupiditate assumenda eum necessitatibus enim dicta obcaecati corrupti nisi voluptatibus
+            nesciunt dolore provident ut. Ipsa.</p>
+    </section>
+    <section class="sec3"></section>
+    <section class="sec2">
+        <h1>djajdsk asjkldjkl</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat eligendi accusamus, excepturi dolorem nulla
+            atque? Fuga praesentium, obcaecati eveniet id consequuntur omnis nulla, qui, voluptate modi deleniti velit
+            placeat cupiditate.
+            Excepturi unde consectetur, accusamus quibusdam dicta doloribus est aliquid, nulla commodi tempora quos
+            officia quasi quisquam optio sint ad aut a ea sit esse praesentium cumque assumenda? Obcaecati, voluptatem
+            cumque.
+            Placeat voluptate deserunt cupiditate amet optio aut delectus tempore rerum aliquid unde omnis, nulla
+            laboriosam reprehenderit, vitae cum quam! Mollitia, corrupti nobis exercitationem illum ab veritatis
+            repellendus voluptas aliquid voluptatum!
+            Repellat sint quod expedita odit beatae consequuntur doloremque minima hic facere dicta, dolore obcaecati
+            perspiciatis dignissimos laudantium debitis. Exercitationem cumque ut, rerum aut dolores qui delectus
+            veritatis quas culpa rem?
+            Tempore perferendis corporis aperiam odit porro quibusdam ipsum quae eveniet! Ullam possimus, mollitia,
+            velit asperiores, cupiditate assumenda eum necessitatibus enim dicta obcaecati corrupti nisi voluptatibus
+            nesciunt dolore provident ut. Ipsa.</p>
+    </section>
+    <section class="sec4"></section>
+
+</body>
+
+</html>

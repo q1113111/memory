@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 100px;
+        }
+
+        section video {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        section h2 {
+            position: relative;
+            color: #fff;
+            font-size: 3rem;
+        }
+
+        section p {
+            position: relative;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <video src="bg.mov" autoplay muted loop></video>
+    </section>
+    <section>
+        <div class="content">
+            <h2>
+                Fadeout Video Background On Scroll
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tempore accusamus dolorem voluptatibus
+                molestias debitis magnam laudantium odio fugit! Cumque odit aut repellendus impedit provident temporibus
+                obcaecati pariatur tempora optio.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, rerum! Fugiat, alias distinctio
+                numquam odio veritatis, eius quos repellendus molestias voluptas qui omnis, culpa sit asperiores. Et
+                beatae vel hic.
+            </p>
+        </div>
+    </section>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        (function ($) {
+            $(function () {
+                $(window).on('scroll',function(){
+                    let value = 1 + $(window).scrollTop()/-600;
+                    $('video').css('opacity',value);
+                    console.log(value);
+                })
+            });
+        })(jQuery)
+
+        // let video = document.querySelector('video');
+        // window.addEventListener('scroll',function(){
+        //     let value = 1 + window.scrollY/-600;
+        //     console.log(value);
+        //     video.style.opacity = value;
+        // })
+    </script>
+</body>
+
+</html>

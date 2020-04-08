@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  background: #000;
+  color: #fff;
+  cursor: none;
+  position: relative;
+  min-height:100vh;
+  padding:0px;
+  margin: 0px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  display: inline-block;
+  padding: 20px;
+}
+button {
+  padding: 10px 30px;
+  color:  #fff;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  font-size: 20px;
+  cursor: none;
+  box-shadow:none;
+  transition: all .4s ease-in-out;
+}
+button:hover {
+  background: #fff;
+  color:#000;
+}
+.cursor {
+  pointer-events: none ;
+  position:absolute;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  mix-blend-mode: exclusion;
+  background: radial-gradient(circle, #fff 0%, #fff 3.99%, #000 4%, #000 49.99%, #fff 50%, #fff 100%);
+}
+.cursor.style1 {
+  background: radial-gradient(circle, #fff 0%, #fff 3.99%, #000 4%, #000 49.99%, #fff 50%, #fff 100%);
+}
+.cursor.style2 {
+  background: radial-gradient(circle, #000 0%, #000 3.99%, #fff 4%,  #fff 100%);
+}
+.cursor.style3 {
+  background: radial-gradient(circle, #fff 0%, #fff 3.99%, #000 4%, #000 68.99%, #fff 70%, #fff 100%);
+}
+
+.cursor.click {
+  animation: click .3s ease-in-out;
+}
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+section{
+    height: 100vh;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    
+  <div class="cursor">
+    </div>
+<h1>Hello world</h1>
+<div class="cc"><img src="images/3.jpg" alt=""></div>
+<p>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque sit sequi ullam voluptate asperiores eius rem praesentium illum iure. Labore iusto impedit dicta nam nisi suscipit eum recusandae voluptatibus sint.</p>
+<div class="btn">
+  <button class="btn1">cursor 1</button>
+  <button class="btn2" >cursor 2</button>
+  <button class="btn3">cursor 3</button>
+</div>
+<section></section>
+<section></section>
+<section></section>
+<script>
+const cursor = document.querySelector('.cursor')
+document.addEventListener('mousemove', (e) => {  
+  cursor.setAttribute("style","top: "+(e.pageY-60)+"px; left: "+ (e.pageX-60) +"px;")
+})   
+
+document.addEventListener("click", (e) => {
+  console.log(e.target)
+  cursor.classList.add('click')
+  
+  setTimeout(()=>{
+    cursor.classList.remove('click')
+  },500)
+})
+
+const btn1 = document.querySelector('.btn1')
+const btn2 = document.querySelector('.btn2')
+const btn3 = document.querySelector('.btn3')  
+
+btn1.addEventListener("click", function() {
+
+  cursor.classList.remove('style2')
+  cursor.classList.remove('style3')
+  cursor.classList.add('style1')
+})
+
+btn2.addEventListener('click', (e) => {
+  cursor.classList.remove('style1')
+  cursor.classList.remove('style3')
+  cursor.classList.add('style2')
+})
+
+btn3.addEventListener('click', (e) => {
+  cursor.classList.remove('style1')
+  cursor.classList.remove('style2')
+  cursor.classList.add('style3')
+})
+</script>
+</body>
+</html>
